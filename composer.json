@@ -1,0 +1,12 @@
+{
+  "name": "ec-cube/CategoryIndex",
+  "version": "1.0.0",
+  "description": "Category Index Plugin",
+  "type": "eccube-plugin",
+  "require": {
+    "ec-cube/plugin-installer": "~0.0.7"
+  },
+  "extra": {
+    "code": "CategoryIndex"
+  }
+}
