@@ -1,0 +1,14 @@
+{% if Category is not empty %}
+<script>
+    $(function () {
+        $('#category_index_description').prependTo( $('.ec-layoutRole__main').first() );
+        $('#category_index_template').remove();
+    });
+</script>
+
+<div id="category_index_template" style="display: none;">
+    <div id="category_index_description">
+        {{ Category.description|raw|nl2br }}
+    </div>
+</div>
+{% endif %}

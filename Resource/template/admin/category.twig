@@ -1,0 +1,23 @@
+{% if Categories|length > 0 %}
+    {% for Category in Categories %}
+        {% if Category.id != TargetCategory.id %}
+
+            <script>
+                $(function () {
+                    $('#category_index_{{ Category.id }}').appendTo($('#category_{{ Category.id }}_name').closest('form'));
+                    $('#category_index_template_{{ Category.id }}').remove();
+                });
+            </script>
+
+            <div id="category_index_template_{{ Category.id }}" style="display: none;">
+
+                <div id="category_index_{{ Category.id }}" class="col-auto align-items-center"
+                     style="width:90%; padding-top: 10px;">
+                    {{ form_widget(forms[Category.id].description, {'attr': {'data-origin-value': forms[Category.id].description.vars.value}}) }}
+                    {{ form_errors(forms[Category.id].description) }}
+                </div>
+            </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
